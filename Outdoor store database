@@ -1,0 +1,23 @@
+Create table store (id integer primary key, product text, quantity integer, asile integer, price integer);
+
+Insert into store values(1, "flash light", 132, 4, 12.99);
+insert into store values(2, "tent", 7, 9, 399.99);
+insert into store values(3, "camping stove", 15, 8, 149.99);
+insert into store values(4, "backpack", 42, 7, 69.99);
+insert into store values(5, "camelpack", 27, 7, 29.99);
+insert into store values(6, "pocket knife", 52, 5, 34.99);
+insert into store values(7, "fannypack", 38, 7, 19.99);
+insert into store values(8, "fire wood", 42, 10, 9.99);
+insert into store values(9, "canopy", 15, 9, 99.99);
+insert into store values(10, "cooler", 17, 1, 79.99);
+insert into store values(11, "corn hole", 23, 3, 74.99);
+insert into store values(12, "bug spray", 57, 2, 7.99);
+insert into store values(13, "sunscreen", 63, 2, 8.99);
+insert into store values(14, "lantern", 17, 4, 39.99);
+insert into store values(15, "water bottle", 83, 1, 24.99);
+
+--Total number of items 
+Select sum(quantity) from store; 
+
+--Ordered items from least expensive to most expensive
+Select * from store order by price
