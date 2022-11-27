@@ -1,0 +1,33 @@
+CREATE TABLE movie_stars (id integer primary key, first_name TEXT, last_name TEXT, active_years INTEGER, age INTEGER);
+
+Insert into movie_stars VALUES
+(1, 'Chris', 'Evans', 25, 41),
+(2, 'Chris', 'Pratt', 22, 43),
+(3, 'Robert', 'Downey Jr.', 52, 57),
+(4, 'Anne', 'Hathaway', 23, 40),
+(5, 'Lindsay', 'Lohan', 33, 36),
+(6, 'Anna', 'Kendrick', 24, 37),
+(7, 'Ryan', 'Reynolds', 31, 46),
+(8, 'Jennifer', 'Lawrence', 16, 32);
+
+Select * from movie_stars;
+
+
+CREATE TABLE movie_credits (id integer, active_years INTEGER, total_movies INTEGER, biggest_role TEXT);
+
+Insert into movie_credits VALUES
+(1, 25, 58, 'Captain America'),
+(2, 22, 69, 'Star Lord'),
+(3, 52, 93, 'Tony Stark'),
+(4, 23, 58, 'Mia Thermopolis'),
+(5, 33, 61, 'Cady Heron'),
+(6, 24, 61, 'Beca'),
+(7, 31, 121, 'Deadpool'),
+(8, 16, 33, 'Katniss Everdeen');
+
+Select * from movie_credits;
+
+Select movie_stars.first_name, movie_stars.last_name, movie_stars.active_years, movie_credits.total_movies
+from movie_stars
+Join movie_credits
+ON movie_stars.id=movie_credits.id;
