@@ -1,0 +1,15 @@
+Select *
+From superstore
+Order by price desc;
+
+Select sum(price)
+From superstore;
+
+Select sum(price)
+From superstore
+Where category='Kitchen Supplies';
+
+
+Select sum(price)
+From superstore
+Where item_name='Robot Vacuum Cleaner';
