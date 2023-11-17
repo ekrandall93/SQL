@@ -1,0 +1,25 @@
+Select *
+From fortune_companies;
+ 
+Select company_name, paid_time_off_days,
+CASE when paid_time_off_days >=20 then "Great PTO"
+when paid_time_off_days >=15 then "Better PTO"
+when paid_time_off_days >=10 then "Standard PTO"
+Else "Poor PTO"
+End as PTO
+From fortune_companies
+Order By paid_time_off_days DESC;
+
+Select industry, ROUND(AVG(avg_employee_tenure),1) as avg_employee_retention
+From fortune_companies
+Group By industry
+HAVING avg_employee_retention>=6;
+
+Select company_name
+From fortune_companies
+Where paid_time_off_days>=18
+And avg_employee_tenure>=6;
+
+Select company_name, max(revenue)
+From fortune_companies
+Where industry='Technology';
