@@ -1,0 +1,12 @@
+--CTE/WITH statement example 
+--This SQL is creating a list of bike lanes that have a safety rating of 4 or higher.
+
+WITH safety_average_CTE AS (
+SELECT street, AVG(safetyrating) as 'rating'
+FROM citybikelanes
+GROUP BY street)
+
+Select street, rating,
+'Safe Lane' as 'label'
+From safety_average_CTE
+Where rating>=4;
